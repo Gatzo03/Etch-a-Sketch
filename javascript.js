@@ -5,6 +5,7 @@ const containerMessaggio = document.createElement("div");
 const messaggioScrittura = document.createElement("h3");
 let erase=false;
 let write=false;
+let colore="black";
 for(let i = 0; i<(64); i++){
     const row = document.createElement("div");
     row.classList.add("riga");
@@ -20,15 +21,15 @@ for(let i = 0; i<(64); i++){
 const squares = document.querySelectorAll(".square");
 
 
-const griglia = document.querySelector(".omegaContainer");
+const griglia = document.querySelector(".container");
 griglia.addEventListener('click', () => {
     write = !write;
     console.log("write= " + write);
        Messaggio();
 })
-    /*if(write===true && erase===false){
+    if(write===true && erase===false){
      
-        messaggioScrittura.textContent = "Stai scrivendo";
+        messaggioScrittura.textContent = "clicca per scrivere";
         body.appendChild(containerMessaggio);
         containerMessaggio.appendChild(messaggioScrittura);
     } 
@@ -37,25 +38,38 @@ griglia.addEventListener('click', () => {
     }
 
     else if( erase==true){
-        messaggioScrittura.textContent = "Stai cancellando";
+        messaggioScrittura.textContent = "clicca per cancellare";
         body.appendChild(containerMessaggio);
         containerMessaggio.appendChild(messaggioScrittura);
-
-    }
-})*/
+        }
+    
 
 
 squares.forEach((square) => {
     
         square.addEventListener('mouseover', () =>{
+            if(colore==="black"){
             if(write===true && erase===false){
                 square.classList.add("blackSquare");
                 square.classList.remove("whiteSquare");
             }
-            else if(write == true && erase===true){
+            else if(write === true && erase===true){
                 square.classList.remove("blackSquare");
+                square.classList.remove("redSquare");
                 square.classList.add("whiteSquare");
-            }})});
+            }}
+            else if(colore==="red"){
+                if(write===true && erase===false){
+                    square.classList.add("redSquare");
+                    square.classList.remove("whiteSquare");
+                }
+                else if(write === true && erase===true){
+                    square.classList.remove("redSquare");
+                    square.classList.remove("blackSquare");
+                    square.classList.add("whiteSquare");
+                }}
+                
+            })});
 
 const cancelButton = document.querySelector(".eraser");
 cancelButton.addEventListener('click', () => {
@@ -80,20 +94,23 @@ function Messaggio(){
     }
     else{
         if(erase===false){
-            messaggioScrittura.textContent = "puoi scrivere";
+            messaggioScrittura.textContent = "clicca per scrivere";
             
         }
         else{
-            messaggioScrittura.textContent = "puoi cancellare";
+            messaggioScrittura.textContent = "clicca per cancellare";
             
         }
     
 }
 }
 
+const rosso = document.querySelector(".rosso");
+const nero = document.querySelector(".nero");
 
+nero.addEventListener('click', ()=> colore="black");
+rosso.addEventListener('click', ()=> colore="red");
 
-            
 
 
 

@@ -1,4 +1,6 @@
-
+*{
+    color:white;
+}
 body{
     margin:0px;
     padding:0px;
@@ -21,7 +23,8 @@ body{
 .omegaContainer{
     
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width:100vh;
     
 }
 
@@ -37,6 +40,12 @@ body{
     width: 20px;
 }
 
+.redSquare{
+    background-color:red;
+    height: 20px;
+    width: 20px;
+}
+
 h1{
     color:white;
 }
@@ -48,8 +57,8 @@ h3{
 
 
 .container{
-    height: 640px;
-    width:640px;
+    height:600px;
+    width:600px;
     display: flex;
     flex-direction: column;
 }
@@ -66,7 +75,24 @@ h1{
 }
 
 button{
-    margin:16px;
+    margin-top:16px;
     width: 100px;
+    color:black;
+}
+
+.eraser{
+    color:black;
+    align-self: center;
+}
+
+.columnContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+   
 }
 
