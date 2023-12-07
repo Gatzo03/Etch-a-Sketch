@@ -1,0 +1,32 @@
+body{
+    margin:0px;
+    padding:0px;
+    background-color: black;
+    
+   
+
+}
+
+
+
+.riga{
+    display: flex;
+}
+
+.omegaContainer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.riga:hover{
+    background-color:black;
+}
+
+.whiteSquare{
+    color:white;
+}
+.blackSquare{
+    color:black;
+}
