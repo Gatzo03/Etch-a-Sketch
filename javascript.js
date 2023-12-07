@@ -6,11 +6,58 @@ const messaggioScrittura = document.createElement("h3");
 let erase=false;
 let write=false;
 let colore="black";
-for(let i = 0; i<(64); i++){
+
+function colorareNero(square){
+    
+        if(write===true && erase===false){
+            square.classList.add("blackSquare");
+            square.classList.remove("whiteSquare");
+            square.classList.remove("redSquare");
+            square.classList.remove("blueSquare");
+        }
+        else if(write === true && erase===true){
+            square.classList.remove("blackSquare");
+            square.classList.remove("redSquare");
+            square.classList.add("whiteSquare");
+            square.classList.remove("blueSquare");
+        }}
+
+
+function colorareRosso(square){
+     
+        if(write===true && erase===false){
+            square.classList.add("redSquare");
+            square.classList.remove("whiteSquare");
+            square.classList.remove("blackSquare");
+            square.classList.remove("blueSquare");
+        }
+        else if(write === true && erase===true){
+            square.classList.remove("redSquare");
+            square.classList.remove("blackSquare");
+            square.classList.add("whiteSquare");
+            square.classList.remove("blueSquare");
+        }}
+
+function colorareBlu(square){
+     
+        if(write===true && erase===false){
+                square.classList.add("blueSquare");
+                square.classList.remove("whiteSquare");
+                square.classList.remove("blackSquare");
+                square.classList.remove("redSquare");
+        }
+        else if(write === true && erase===true){
+                square.classList.remove("redSquare");
+                square.classList.remove("blackSquare");
+                square.classList.add("whiteSquare");
+                square.classList.remove("blueSquare");
+        }}
+
+for(let i = 0; i<(16); i++){
     const row = document.createElement("div");
     row.classList.add("riga");
     grid.appendChild(row);
-        for(let j=0;j<64;j++){
+        for(let j=0;j<16;j++){
         const square = document.createElement("div");
         row.appendChild(square);
         
@@ -49,27 +96,17 @@ squares.forEach((square) => {
     
         square.addEventListener('mouseover', () =>{
             if(colore==="black"){
-            if(write===true && erase===false){
-                square.classList.add("blackSquare");
-                square.classList.remove("whiteSquare");
+            colorareNero(square);
             }
-            else if(write === true && erase===true){
-                square.classList.remove("blackSquare");
-                square.classList.remove("redSquare");
-                square.classList.add("whiteSquare");
-            }}
             else if(colore==="red"){
-                if(write===true && erase===false){
-                    square.classList.add("redSquare");
-                    square.classList.remove("whiteSquare");
-                }
-                else if(write === true && erase===true){
-                    square.classList.remove("redSquare");
-                    square.classList.remove("blackSquare");
-                    square.classList.add("whiteSquare");
-                }}
-                
-            })});
+            colorareRosso(square);
+            }
+            else if(colore==="blu"){
+            colorareBlu(square);
+            }
+        })
+    });
+
 
 const cancelButton = document.querySelector(".eraser");
 cancelButton.addEventListener('click', () => {
@@ -107,9 +144,40 @@ function Messaggio(){
 
 const rosso = document.querySelector(".rosso");
 const nero = document.querySelector(".nero");
+const blu = document.querySelector(".blu");
+const pirulino = document.querySelector(".coloreScelto");
 
-nero.addEventListener('click', ()=> colore="black");
-rosso.addEventListener('click', ()=> colore="red");
+nero.addEventListener('click', ()=> {
+    colore="black";
+    pirulino.classList.add("backGroundNero");
+    pirulino.classList.remove("backGroundRosso");
+    pirulino.classList.remove("backGroundblu");
+    if(erase===true){
+        erase=!erase;
+        messaggioScrittura.textContent = "clicca per scrivere";
+    }
+})
+rosso.addEventListener('click', ()=> {
+    pirulino.classList.add("backGroundRosso");
+    pirulino.classList.remove("backGroundNero");
+    pirulino.classList.remove("backGroundblu");
+    colore="red";
+    if(erase===true){
+        erase=!erase;
+        messaggioScrittura.textContent = "clicca per scrivere";
+    }
+})
+
+blu.addEventListener('click', ()=> {
+    pirulino.classList.add("backGroundBlu");
+    pirulino.classList.remove("backGroundNero");
+    pirulino.classList.remove("backGroundRosso");
+    colore="blu";
+    if(erase===true){
+        erase=!erase;
+        messaggioScrittura.textContent = "clicca per scrivere";
+    }
+})
 
 
 

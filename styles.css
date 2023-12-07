@@ -46,6 +46,12 @@ body{
     width: 20px;
 }
 
+.blueSquare{
+    background-color:blue;
+    height: 20px;
+    width: 20px;
+}
+
 h1{
     color:white;
 }
@@ -94,5 +100,26 @@ button{
     display: flex;
     flex-direction: column;
    
+}
+
+.coloreScelto{
+    height: 20px;
+    width: 20px;
+    border-radius: 24px;
+    border: 2px solid white;
+    align-self: center;
+    margin-top: 16px;
+}
+
+.backGroundRosso{
+    background-color: red;
+}
+
+.backGroundNero{
+    background-color: black;
+}
+
+.backGroundBlu{
+    background-color: blue;
 }
 
