@@ -13,8 +13,22 @@ for(let i = 0; i<(32); i++){
 }
 const squares = document.querySelectorAll(".square");
 
-squares.forEach((square) =>
-square.addEventListener('click', () => {
-    square.classList.add("blackSquare");
-    square.classList.remove("whiteSquare");
-}));
+let mouseClick = false;
+const body = document.querySelector("body");
+body.addEventListener('click', () => {
+    mouseClick = !mouseClick;
+    console.log(mouseClick);
+})
+
+
+squares.forEach((square) => {
+    
+        square.addEventListener('mouseover', () =>{
+            if(mouseClick===true){
+            square.classList.add("blackSquare");
+            square.classList.remove("whiteSquare");
+    }})});
+
+
+
+
