@@ -3,8 +3,6 @@ body{
     padding:0px;
     background-color: black;
     
-   
-
 }
 
 
@@ -20,13 +18,14 @@ body{
     align-items: center;
 }
 
-.riga:hover{
-    background-color:black;
-}
 
 .whiteSquare{
-    color:white;
+    background-color:white;
+    height: 20px;
+    width: 20px;
 }
 .blackSquare{
-    color:black;
+    background-color:black;
+    height: 20px;
+    width: 20px;
 }
