@@ -80,6 +80,12 @@ h1{
     margin-bottom: 64px;
 }
 
+h3{
+    width: 100px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
 button{
     margin-top:16px;
     width: 100px;
@@ -99,6 +105,9 @@ button{
 .option{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 32px;
    
 }
 

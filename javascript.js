@@ -3,6 +3,7 @@ const eraser = document.querySelector(".eraser");
 const body = document.querySelector("body");
 const containerMessaggio = document.createElement("div");
 const messaggioScrittura = document.createElement("h3");
+const option = document.querySelector(".option");
 let erase=false;
 let write=false;
 let colore="black";
@@ -77,7 +78,7 @@ griglia.addEventListener('click', () => {
     if(write===true && erase===false){
      
         messaggioScrittura.textContent = "clicca per scrivere";
-        body.appendChild(containerMessaggio);
+        option.appendChild(containerMessaggio);
         containerMessaggio.appendChild(messaggioScrittura);
     } 
     else if(write==false && erase==false){
@@ -86,7 +87,7 @@ griglia.addEventListener('click', () => {
 
     else if( erase==true){
         messaggioScrittura.textContent = "clicca per cancellare";
-        body.appendChild(containerMessaggio);
+        option.appendChild(containerMessaggio);
         containerMessaggio.appendChild(messaggioScrittura);
         }
     
@@ -120,12 +121,12 @@ function Messaggio(){
     if(write===true){
         if(erase===false){
             messaggioScrittura.textContent = "Stai scrivendo";
-            body.appendChild(containerMessaggio);
+            option.appendChild(containerMessaggio);
             containerMessaggio.appendChild(messaggioScrittura);
         }
         else{
             messaggioScrittura.textContent = "Stai cancellando";
-            body.appendChild(containerMessaggio);
+            option.appendChild(containerMessaggio);
             containerMessaggio.appendChild(messaggioScrittura);
         }
     }
